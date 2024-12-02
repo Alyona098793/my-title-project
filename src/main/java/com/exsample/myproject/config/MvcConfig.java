@@ -11,4 +11,8 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
     }
 
+    public void text(){
+        System.out.println("hello");
+    }
+
 }
