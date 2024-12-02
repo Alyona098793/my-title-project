@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<div><form action="/logout" method="post">
+    <input type="submit" value="Sign Out"/>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+</form>
+</div>
+It is my blog.
+<div>
+    <form method="post">
+        <input type="text" name="titleName" placeholder="Enter title name"/>
+        <input type="text" name="titleTag" placeholder="Enter tag of title"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div>
+</div>
+<a href="/filter">Search by tag</a>
+<br>
+
+{{#titles}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{titleName}}</span>
+        <i>{{titleTag}}</i>
+        <strong>{{authorNameNew}}</strong>
+    </div>
+{{/titles}}
+</body>
+</html>
